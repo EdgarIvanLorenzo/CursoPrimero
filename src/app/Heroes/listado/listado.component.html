@@ -1,0 +1,22 @@
+<h1>Listado de Heroes</h1>
+
+<!--Realizamos una lista descriptiva con la etiqueta dl-->
+<dl>
+
+  <!--Titulo de la descripcion-->
+  <td>Nombre:</td>
+  <!--Descripcion del titulo-->
+  <dd>{{heroe}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{edad}}</dd>
+
+
+  <td>Convercion:</td>
+  <!--Dentro de la bidireccionalidad podemos poner metodos get o metodo definidos-->
+  <dd>{{Mayusculas}}</dd>
+</dl>
+
+<!--Botones para ca,biar datos del Dom-->
+<button (click)="cambiarHeroe()">Cambiar Heroes</button>
+<button (click)="cambiarEdad()">Cambiar Edad</button>

@@ -1,0 +1,25 @@
+<!--Para poner una condicion para mmostrar un elemento lo realizamos con la directiva ngIf-->
+<h1 *ngIf='heroes'>Lista de superheroes</h1>
+
+<ul>
+  <!--directiva ngFor me permite realizar un ciclo para recorrer un arreglo -->
+  <li *ngFor='let i of heroes; let p=index'>{{p+'-'+i}}</li>
+</ul>
+
+<!--div para poner el heroe borrado-->
+<div>
+  <!--El elemento ng-template me permite cargar un codigo html sin ser visualizado
+  a menos que se cumpla una condicion-->
+  <h2 *ngIf='heroeEliminado; else eliminado' [ngClass]="{rojo:heroeEliminado}">Heroe Borrado</h2>
+  <span>...{{heroeEliminado}}</span>
+</div>
+<br>
+<!--ng-template que se visualizara solo cuando se cumpla una condicion para se estvisualizada-->
+<ng-template #eliminado>
+  <h2>No has eliminado nada</h2>
+</ng-template>
+
+
+<!--Boton para eliminar los elementos del arreglo-->
+<button (click)="eliminarHeroe()">Eliminar </button>
+
